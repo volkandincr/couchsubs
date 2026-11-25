@@ -673,7 +673,7 @@ private struct AdvancedSettings: View {
         case .free: "Apple's translation runs on this Mac; subtitle text never leaves it."
         case .gemini: "Better translation with a free Google key."
         case .deepL: "With your own DeepL key."
-        case .openAI, .claude: "With your own key."
+        case .openAI, .claude, .deepSeek: "With your own key."
         case .local: "Ollama or LM Studio; no quota."
         }
     }
@@ -695,7 +695,7 @@ private struct AdvancedSettings: View {
                 .buttonStyle(.dsSecondary)
             }
         case .deepL: DeepLKeySection()
-        case .gemini, .openAI, .claude:
+        case .gemini, .openAI, .claude, .deepSeek:
             if let provider = engine.aiProvider { AIKeySection(provider: provider).id(provider) }
         case .local: LocalAISection()
         }

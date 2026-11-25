@@ -1450,6 +1450,7 @@ class TranslationService : Service() {
                 val provider = when (engine) {
                     EngineChoice.GEMINI -> AiProvider.GEMINI
                     EngineChoice.OPENAI -> AiProvider.OPENAI
+                    EngineChoice.DEEPSEEK -> AiProvider.DEEPSEEK
                     else -> AiProvider.CLAUDE
                 }
                 // Seçilen model (Ayarlar); dakikalık hakkı da modelin kendi sınırıdır (RequestBudget.shared).
@@ -1583,6 +1584,7 @@ class TranslationService : Service() {
         EngineChoice.GEMINI -> "Gemini"
         EngineChoice.OPENAI -> "OpenAI"
         EngineChoice.CLAUDE -> "Claude"
+        EngineChoice.DEEPSEEK -> "DeepSeek"
         EngineChoice.LOCAL -> getString(R.string.engine_local)
     }
 
